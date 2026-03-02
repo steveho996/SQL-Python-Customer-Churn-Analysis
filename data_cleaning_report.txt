@@ -1,0 +1,27 @@
+================================================================================
+DATA CLEANING REPORT
+================================================================================
+
+ORIGINAL DATASET
+Rows: 50000
+Columns: 25
+Missing values: 0
+
+CLEANING ACTIONS PERFORMED
+--------------------------------------------------------------------------------
+1. Age: Capped outliers (>100, <18) and imputed with median
+2. Total_Purchases: Set negative values to 0
+3. Percentage columns: Capped Cart_Abandonment_Rate and Discount_Usage_Rate at 100
+4. Missing values: Imputed numerical columns with median
+5. Data types: Optimized integer columns
+
+CLEANED DATASET
+Rows: 50000
+Columns: 25
+Missing values: 0
+
+VALIDATION RESULTS
+Age range: 18.0 - 75.0
+Negative purchases: 0
+Invalid percentages: 0
+Duplicate rows: 0
