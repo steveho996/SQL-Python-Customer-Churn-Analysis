@@ -1,3 +1,9 @@
+/* Q4. What is the average customer tenure?
+Split by:
+•	Churned customers
+•	Active customers
+*/ 
+
 SELECT
   "Churned",
   COUNT(*) AS customers,
