@@ -1,3 +1,10 @@
+/* Q3. How has churn changed over time?
+Example angles:
+By month
+By year
+Before vs after certain tenure
+*/
+
 SELECT
   "Signup_Quarter",
   CASE
