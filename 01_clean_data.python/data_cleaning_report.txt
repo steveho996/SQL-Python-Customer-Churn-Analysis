@@ -1,27 +1,58 @@
-================================================================================
-DATA CLEANING REPORT
-================================================================================
+====================================================================================================
+E-COMMERCE CUSTOMER CHURN DATA CLEANING REPORT
+====================================================================================================
+📊 Original Dataset: 50,000 rows × 25 columns
+📊 Missing values (original): 49,081
+----------------------------------------------------------------------------------------------------
 
-ORIGINAL DATASET
-Rows: 50000
-Columns: 25
-Missing values: 0
+1️⃣ CLEANING AGE COLUMN
+   Original: Missing=2495, >100=20, <18=30
+   ✅ Fixed: 20 high outliers + 30 low outliers → median 38
+   Age range now: 18 - 75
 
-CLEANING ACTIONS PERFORMED
---------------------------------------------------------------------------------
-1. Age: Capped outliers (>100, <18) and imputed with median
-2. Total_Purchases: Set negative values to 0
-3. Percentage columns: Capped Cart_Abandonment_Rate and Discount_Usage_Rate at 100
-4. Missing values: Imputed numerical columns with median
-5. Data types: Optimized integer columns
+2️⃣ CLEANING TOTAL_PURCHASES
+   ✅ Fixed: 40 negative values → 0
+   Purchases range now: 0.0 - 128.70000000000002
 
-CLEANED DATASET
-Rows: 50000
-Columns: 25
-Missing values: 0
+3️⃣ CLEANING PERCENTAGE COLUMNS
+   ✅ Cart_Abandonment_Rate: Capped 30 values >100%
+   ✅ Discount_Usage_Rate: Capped 207 values >100%
 
-VALIDATION RESULTS
-Age range: 18.0 - 75.0
-Negative purchases: 0
-Invalid percentages: 0
-Duplicate rows: 0
+4️⃣ HANDLING MISSING VALUES
+   ✅ Session_Duration_Avg: Filled 3,399 values (median=26.80)
+   ✅ Pages_Per_Session: Filled 3,000 values (median=8.40)
+   ✅ Wishlist_Items: Filled 4,000 values (median=4.00)
+   ✅ Days_Since_Last_Purchase: Filled 3,000 values (median=21.00)
+   ✅ Discount_Usage_Rate: Filled 3,500 values (median=40.20)
+   ✅ Returns_Rate: Filled 4,491 values (median=5.40)
+   ✅ Email_Open_Rate: Filled 2,528 values (median=19.70)
+   ✅ Customer_Service_Calls: Filled 168 values (median=5.00)
+   ✅ Product_Reviews_Written: Filled 3,500 values (median=2.00)
+   ✅ Social_Media_Engagement_Score: Filled 6,000 values (median=27.60)
+   ✅ Mobile_App_Usage: Filled 5,000 values (median=18.60)
+   ✅ Payment_Method_Diversity: Filled 2,500 values (median=2.00)
+   ✅ Credit_Balance: Filled 5,500 values (median=1896.00)
+   📈 Total missing values fixed: 46,586
+
+5️⃣ OPTIMIZING DATA TYPES
+
+6️⃣ POSTGRESQL TYPE FIXING
+
+====================================================================================================
+✅ FINAL VALIDATION REPORT
+====================================================================================================
+📊 Dataset shape: 50,000 → 50,000 rows (0 rows dropped)
+🔍 Missing values: 49,081 → 0 (ALL FIXED)
+🔍 Duplicates: 0 → 0
+
+📈 KEY METRICS VALIDATION:
+   • Age: 18 - 75 years ✓
+   • Purchases: 0.0 - 128.7 ✓
+   • Cart Rate: 0.0% - 100.0% ✓
+   • Discount Rate: 0.2% - 100.0% ✓
+   • Churn rate: 28.9% of 50,000 customers
+
+====================================================================================================
+💾 SAVING CLEANED DATASET
+====================================================================================================
+✅ Saved to: D:\Datapot class\Portfolio Dataset\Ecommerce Customer Churn\ecommerce_customer_churn_cleaned.csv
