@@ -77,7 +77,6 @@ Low login frequency (bottom 20%)
 Q1-Q4: 96% → 89% → 83% (Yr1→Yr2→Yr3)
 Cohort quality stable across quarters
 
-text
 **Takeaway:** Acquisition timing doesn't drive retention; **behavior does**.
 
 ### **Q15–Q18: Revenue Risk & Priority Targets**
